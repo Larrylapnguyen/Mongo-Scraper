@@ -1,0 +1,32 @@
+<div>
+	<div class="jumbotron jumbotron-fluid bg-header">
+		<div class="container">
+			<h1 class="display-4">Article Scraper</h1>
+			<p class="lead">Scrape them articles.</p>
+			<form action="/" method="get">
+				<button class="btn btn-dark">Home</button>
+			</form>
+			<form action="/scrape" method="get">
+				<button class="btn btn-primary">Scrape</button>
+			</form>
+			<form action="/saved" method="get">
+				<button class="btn btn-success">Saved Articles</button>
+			</form>
+		</div>
+	</div>
+
+	{{#each articles}}
+	<div class="card">
+		<div class="card-header bg-info">
+			<h2>{{title}}</h2>
+			<form action="/save/{{id}}" method="post">
+				<button class="btn btn-warning">Save</button>
+			</form>
+		</div>
+		<div class="card-body">
+			<p class="card-text">{{para}}</p>
+		</div>
+	</div>
+	<hr>
+	{{/each}}
+</div>

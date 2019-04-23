@@ -1,0 +1,17 @@
+.bg-header{
+	background-image: url(/img/cloud.jpg);
+	background-position: -100px -900px;
+	background-repeat: no-repeat;
+}
+.container form{
+	float: left;
+	margin-right: 10px;
+}
+h1{
+	color: #000000;
+	font-size: 70px !important;
+	font-weight: bold !important;
+}
+p{
+	font-size: 25px;
+}

@@ -1,0 +1,56 @@
+<div>
+	<div class="jumbotron jumbotron-fluid bg-header">
+		<div class="container">
+			<h1 class="display-4">Article Scraper</h1>
+			<p class="lead">Scrape them articles.</p>
+			<form action="/" method="get">
+				<button class="btn btn-dark">Home</button>
+			</form>
+			<form action="/scrape" method="get">
+				<button class="btn btn-primary">Scrape</button>
+			</form>
+			<form action="/saved" method="get">
+				<button class="btn btn-success">Saved Articles</button>
+			</form>
+		</div>
+	</div>
+
+	{{#each articles}}
+	<div class="card" data-id="{{_id}}">
+		<div class="card-header bg-info">
+			<h2>{{title}}</h2>
+			<form action="/delete/{{_id}}" method="post">
+				<button class="btn btn-danger note">X</button>
+			</form>
+		</div>
+		<div class="card-body">
+			<p class="card-text" data{{@index}}-id="{{_id}}">{{para}}</p>
+
+			<div class="container note-Div">
+				<div class="row mt-3">
+					<div class="input-group mb-1">
+						<input id="noteText" placeholder="Add or Change a Note." type="text" class="form-control">
+						<div class="input-group-append">
+							<button class="btn btn-outline-success" id="addNote" data-id="{{_id}}" >
+								Add
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card">
+			
+				<div class="card-body">
+					<h5 class="card-title">Note</h5>
+					<p class="card-text">
+					{{note}}
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<hr>
+	{{/each}}
+</div>
