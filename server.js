@@ -5,6 +5,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 var app = express();
+var PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({
 	extended: true
@@ -24,7 +25,7 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 
 
-var PORT = 3050;
+
 app.listen(PORT, function () {
 	console.log("App running on port " + PORT + "!");
 });
